@@ -32,3 +32,6 @@
 *.app
 /.vs/OOP345/v16/Browse.VC.opendb
 /w3/.vs/w3/v16/Browse.VC.opendb
+/w4/.vs/w4/v16
+/w4/w4/Debug
+/w4/Debug

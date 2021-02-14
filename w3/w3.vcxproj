@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="products.txt" />
+    <Text Include="reflect.txt" />
     <Text Include="sales.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -35,6 +35,9 @@
     <Text Include="sales.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="reflect.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="w3_p2.cpp">

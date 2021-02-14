@@ -8,23 +8,29 @@ I have done all the coding by myself and only copied the code that my professor 
 #define SDDS_SET_H__
 
 namespace sdds {
-	template <int N, typename T>
+	template <size_t N, typename T>
 	class Set {
-		T m_arraySet[N];
-		int m_noOfElements;
+		T arraySet[N]; // collection of elements of type T
+		size_t noOfElements; // current no of elements in the collection
 	public:
 		//default constructor
-		Set() : m_arraySet{}, m_noOfElements{ 0 } {};
+		Set() : arraySet{}, noOfElements{ 0 } {};
+
+		//returns the current number of elements in the collection
 		size_t size() const {
-			return m_noOfElements;
+			return noOfElements;
 		};
+
+		//returns a reference to the element at index idx
 		const T& get(size_t idx) const {
-			return m_arraySet[idx];
+			return arraySet[idx];
 		};
+
+		// operator += for adding an element in the collection if their is capacity
 		void operator+=(const T& item) {
-			if (m_noOfElements < N) {
-				m_arraySet[m_noOfElements] = item;
-				m_noOfElements++;
+			if (noOfElements < N) {
+				arraySet[noOfElements] = item;
+				noOfElements++;
 			}
 		};
 	};
