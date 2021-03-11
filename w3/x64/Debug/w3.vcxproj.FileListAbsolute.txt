@@ -1,2 +1,0 @@
-C:\Users\garga\source\repos\anmol-garg-001\OOP345\w3\x64\Debug\w3.exe
-C:\Users\garga\source\repos\anmol-garg-001\OOP345\w3\x64\Debug\w3.pdb

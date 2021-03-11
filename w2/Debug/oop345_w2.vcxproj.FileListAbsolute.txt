@@ -1,2 +1,0 @@
-C:\Users\garga\Source\Repos\anmol-garg-001\OOP345\w2\Debug\oop345_w2.exe
-C:\Users\garga\Source\Repos\anmol-garg-001\OOP345\w2\Debug\oop345_w2.pdb
