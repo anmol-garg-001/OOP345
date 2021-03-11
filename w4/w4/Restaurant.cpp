@@ -58,17 +58,17 @@ namespace sdds {
 	{
 		deallocate();
 	}
-	std::ostream& operator<<(std::ostream& os, Restaurant& obj) {
+	std::ostream& operator<<(std::ostream& os, Restaurant& restaurant) {
 		static int counter = 1;
 		os << "--------------------------" << std::endl;
 		os << "Fancy Restaurant (" << counter++ << ")" << std::endl;
 		os << "--------------------------" << std::endl;
-		if (obj.m_noOfRes == 0) {
+		if (restaurant.m_noOfRes == 0) {
 			os << "This restaurant is empty!" << std::endl;
 		}
 		else {
-			for (size_t i = 0; i < obj.m_noOfRes; i++) {
-				os << obj.m_reservations[i];
+			for (size_t i = 0; i < restaurant.m_noOfRes; i++) {
+				os << restaurant.m_reservations[i];
 			}
 		}
 		os << "--------------------------" << std::endl;

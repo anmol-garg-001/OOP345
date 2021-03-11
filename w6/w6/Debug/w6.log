@@ -1,0 +1,8 @@
+﻿  Autoshop.cpp
+  Car.cpp
+  Racecar.cpp
+  Utilities.cpp
+  w6_p2.cpp
+C:\Users\garga\source\repos\anmol-garg-001\OOP345\w6\w6\w6_p2.cpp(42,34): warning C4101: 'e': unreferenced local variable
+  Generating Code...
+  w6.vcxproj -> C:\Users\garga\source\repos\anmol-garg-001\OOP345\w6\Debug\w6.exe

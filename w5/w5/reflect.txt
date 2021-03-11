@@ -1,0 +1,5 @@
+Name: Anmol Garg
+Email: agarg15@myseneca.ca
+Seneca Id: 149916199
+
+-> In this workshop, I have learnt various including functors, lambda expression and exception handling. Function objects are known as functors, we can define a functor as the class of which function objects are instantiated. A lambda expression is basically a shorthand to the function object, it just does not need an identifier, lambda expressions are best to use in the local area of an application. To avoid exceptions in the SpellChecker constructor, it can be done by verifying the file names of the data files before the construction of the SpellChecker Object. In order to avoid duplication of logic in Movie and Book classes, I can create a separate module for the loading of the files and then I can use the module in both of the classes, so that code is not repeated several times. Default constructors are necessary because in case, the custom constructor, does not work as expected, then the member variables will not be initialized and they will contain garbage values in them and it may cause the whole program to crash.

@@ -19,6 +19,9 @@ namespace sdds {
 		// to clear the object
 		void deallocate(); 
 	public:
+		// default constructor -> no implementation
+		Restaurant() {};
+
 		//  a constructor that receives as a parameter an array of reservations and stores in instance variables
 		Restaurant(const Reservation* reservations[], size_t cnt); 
 

@@ -10,74 +10,83 @@ I have done all the coding by myself and only copied the code that my professor 
 #include "Reservation.h"
 
 namespace sdds {
+	Reservation::Reservation()
+	{
+		m_reservationId = "";
+		m_name = "";
+		m_email = "";
+		m_partySize = 0;
+		m_day = 0;
+		m_hour = 0;
+	}
 	Reservation::Reservation(const std::string& str) {
 
-		std::string parameter_str = str; // creating a copy of the parameter string
+		std::string local_str = str;
 
-		parameter_str.erase(0, parameter_str.find_first_not_of(' '));
-		int index = parameter_str.find(':');
-		std::string temp = parameter_str.substr(0, index);
-		temp.erase(temp.find_last_not_of(' ') + 1);
-		m_reservationId = temp;
+		local_str.erase(0, local_str.find_first_not_of(' '));
+		size_t index = local_str.find(':');
+		std::string tempStr = local_str.substr(0, index);
+		tempStr.erase(tempStr.find_last_not_of(' ') + 1);
+		m_reservationId = tempStr;
 
-		parameter_str.erase(0, index + 1);
-		parameter_str.erase(0, parameter_str.find_first_not_of(' '));
-		index = parameter_str.find(',');
-		temp = parameter_str.substr(0, index);
-		temp.erase(temp.find_last_not_of(' ') + 1);
-		m_name = temp;
+		local_str.erase(0, index + 1);
+		local_str.erase(0, local_str.find_first_not_of(' '));
+		index = local_str.find(',');
+		tempStr = local_str.substr(0, index);
+		tempStr.erase(tempStr.find_last_not_of(' ') + 1);
+		m_name = tempStr;
 
-		parameter_str.erase(0, index + 1);
-		parameter_str.erase(0, parameter_str.find_first_not_of(' '));
-		index = parameter_str.find(',');
-		temp = parameter_str.substr(0, index);
-		temp.erase(temp.find_last_not_of(' ') + 1);
-		m_email = temp;
+		local_str.erase(0, index + 1);
+		local_str.erase(0, local_str.find_first_not_of(' '));
+		index = local_str.find(',');
+		tempStr = local_str.substr(0, index);
+		tempStr.erase(tempStr.find_last_not_of(' ') + 1);
+		m_email = tempStr;
 
-		parameter_str.erase(0, index + 1);
-		parameter_str.erase(0, parameter_str.find_first_not_of(' '));
-		index = parameter_str.find(',');
-		temp = parameter_str.substr(0, index);
-		temp.erase(temp.find_last_not_of(' ') + 1);
-		m_partySize = std::stoi(temp);
+		local_str.erase(0, index + 1);
+		local_str.erase(0, local_str.find_first_not_of(' '));
+		index = local_str.find(',');
+		tempStr = local_str.substr(0, index);
+		tempStr.erase(tempStr.find_last_not_of(' ') + 1);
+		m_partySize = std::stoi(tempStr);
 
-		parameter_str.erase(0, index + 1);
-		parameter_str.erase(0, parameter_str.find_first_not_of(' '));
-		index = parameter_str.find(',');
-		temp = parameter_str.substr(0, index);
-		temp.erase(temp.find_last_not_of(' ') + 1);
-		m_day = std::stoi(temp);
+		local_str.erase(0, index + 1);
+		local_str.erase(0, local_str.find_first_not_of(' '));
+		index = local_str.find(',');
+		tempStr = local_str.substr(0, index);
+		tempStr.erase(tempStr.find_last_not_of(' ') + 1);
+		m_day = std::stoi(tempStr);
 
-		parameter_str.erase(0, index + 1);
-		parameter_str.erase(0, parameter_str.find_first_not_of(' '));
-		index = parameter_str.find(',');
-		temp = parameter_str.substr(0, index);
-		temp.erase(temp.find_last_not_of(' ') + 1);
-		m_hour = std::stoi(temp);
+		local_str.erase(0, index + 1);
+		local_str.erase(0, local_str.find_first_not_of(' '));
+		index = local_str.find(',');
+		tempStr = local_str.substr(0, index);
+		tempStr.erase(tempStr.find_last_not_of(' ') + 1);
+		m_hour = std::stoi(tempStr);
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Reservation& obj) {
-		std::string no_people_str = obj.m_partySize == 1 ? " person." : " people.";
-		std::string meal_type_str{};
+		std::string hour_food_type{};
+		std::string people_person = obj.m_partySize == 1 ? " person." : " people.";
 
 		os << "Reservation " << std::setw(10) << std::right << obj.m_reservationId << ": ";
 		os << std::setw(20) << std::right << obj.m_name << "  ";
 		os << std::setw(20) << std::left << "<" + obj.m_email + ">" << "    ";
 
 		if (obj.m_hour >= 6 && obj.m_hour <= 9) {
-			meal_type_str = "Breakfast";
+			hour_food_type = "Breakfast";
 		}
 		else if (obj.m_hour >= 11 && obj.m_hour <= 15) {
-			meal_type_str = "Lunch";
+			hour_food_type = "Lunch";
 		}
 		else if (obj.m_hour >= 17 && obj.m_hour <= 21) {
-			meal_type_str = "Dinner";
+			hour_food_type = "Dinner";
 		}
 		else {
-			meal_type_str = "Drinks";
+			hour_food_type = "Drinks";
 		}
 
-		os << meal_type_str << " on day " << obj.m_day << " @ " << obj.m_hour << ":00 for " << obj.m_partySize << no_people_str << std::endl;
+		os << hour_food_type << " on day " << obj.m_day << " @ " << obj.m_hour << ":00 for " << obj.m_partySize << people_person << std::endl;
 		return os;
 	}
 }

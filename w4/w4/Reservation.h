@@ -11,25 +11,25 @@ I have done all the coding by myself and only copied the code that my professor 
 namespace sdds {
 	class Reservation {
 		// the Id of the reservation
-		std::string m_reservationId{};
+		std::string m_reservationId;
 		
 		// the name on the reservation
-		std::string m_name{}; 
+		std::string m_name; 
 		
 		// the email to be used to send a confirmation that the reservation can be honored or cannot
-		std::string m_email{}; 
+		std::string m_email; 
 
 		// the number of people in the party
-		int m_partySize{};
+		int m_partySize;
 
 		// the day when the party expects to come
-		int m_day{}; 
+		int m_day; 
 
 		// the hour when the party expects to come
-		int m_hour{};
+		int m_hour;
 	public:
-		// default constructor -> no implementation
-		Reservation() {};
+		// default constructor
+		Reservation();
 
 		// this constructor extracts information about the reservation from the string and stores it in the instance's attributes
 		Reservation(const std::string&); 

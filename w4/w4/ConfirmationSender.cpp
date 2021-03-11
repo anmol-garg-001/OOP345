@@ -42,6 +42,7 @@ namespace sdds {
 				{
 					m_reservations[j] = m_reservations[j + 1];
 				}
+				m_reservations[m_noOfRes] = nullptr;
 				m_noOfRes--;
 			}
 		}
